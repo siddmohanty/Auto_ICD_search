@@ -1,0 +1,97 @@
+{% extends "layout.html" %}
+
+{% block body_content %}
+
+<h3> Welcome to the documentation for the rest api (<b>/icd</b>) </h3>
+<h6> For demonstration purposes, I will be using <b>python</b> and its <b>requests</b> package </h6>
+
+<hr>
+
+<p> import requests (<code>pip install requests</code>) and json packages. </p>
+<code>
+    <pre>
+
+    import requests, json
+
+    </pre>
+</code>
+
+<p> Store the url in a variable </p>
+<code>
+    <pre>
+
+    url = "https://icd-10-ai.herokuapp.com/icd"
+
+    </pre>
+</code>
+
+<p> There are four parameters. "age", "sex", "doctor", "input". Create a dictionary with these four parameters as keys and your desired values </p>
+<code>
+    <pre>
+
+    d = {
+            "age":"50-60",
+            "sex":"MALE",
+            "doctor":"UROLOGY",
+            "input":"typhoid"
+        }
+
+    </pre>
+</code>
+
+<p> post a request to the url and get the response </p>
+<code>
+    <pre>
+
+    response = requests.post(url, data=d)
+
+    </pre>
+</code>
+
+<p> store the content of the response in a variable </p>
+<code>
+    <pre>
+
+    content = rensponse.content
+
+    </pre>
+</code>
+
+<p> The content you got is in the form of a binary string. So, decode it into a dictionary to get the final data </p>
+<code>
+    <pre>
+
+    data = json.loads(content.decode())
+
+    </pre>
+</code>
+
+
+<hr>
+
+<h5> The whole code:  </h5>
+<code>
+    <pre>
+
+    import requests, json
+
+    url = "https://icd-10-ai.herokuapp.com/icd"
+    d = {
+            "age":"50-60",
+            "sex":"MALE",
+            "doctor":"UROLOGY",
+            "input":"typhoid"
+        }
+
+    response = requests.post(url, data=d)
+    content = rensponse.content
+    data = json.loads(content.decode())
+
+    </pre>
+</code>
+
+
+
+
+
+{% endblock body_content %}

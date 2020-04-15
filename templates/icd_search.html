@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+
+
+{% block body_content %}
+
+
+<form action="/search" method="POST">
+
+<div class="form-group">
+    <label for="inputlg" style="font: 24px Arial, Helvetica, sans-serif;">Age</label>
+  <input class="form-control input-lg" list="ages" id="age-input" name="age" style="padding: 20px 20px 20px 20px; font: 24px Arial, Helvetica, sans-serif;">
+</div>
+
+    <datalist id="ages">
+        <option id="op6335" value="0-10">
+        <option id="op6335" value="10-20">
+        <option id="op6335" value="20-30">
+        <option id="op6335" value="30-40">
+        <option id="op6335" value="40-50">
+        <option id="op6335" value="50-60">
+        <option id="op6335" value="60-70">
+        <option id="op6335" value="70-80">
+        <option id="op6335" value="80-90">
+        <option id="op6335" value="90-100">
+
+    </datalist>
+
+
+
+<div class="form-group">
+    <label for="inputlg" style="font: 24px Arial, Helvetica, sans-serif;">Sex</label>
+  <input class="form-control input-lg" list="sexes" id="sex-input" name="sex" style="padding: 20px 20px 20px 20px; font: 24px Arial, Helvetica, sans-serif;">
+</div>
+
+    <datalist id="sexes">
+      <option id="op6335" value="MALE">
+      <option id="op6335" value="FEMALE">
+    </datalist>
+
+
+
+
+<div class="form-group">
+    <label for="inputlg" style="font: 24px Arial, Helvetica, sans-serif;">Doctor Specification</label>
+  <input class="form-control input-lg" list="doctors" id="doctor-input" name="doctor" style="padding: 20px 20px 20px 20px; font: 24px Arial, Helvetica, sans-serif;">
+</div>
+
+    <datalist id="doctors">
+      <option id="op6335" value="MEDICAL ONCOLOGY">
+      <option id="op6335" value="SURGICAL ONCOLOGY">
+      <option id="op6335" value="NEURO SURGERY">
+      <option id="op6335" value="MEDICAL GASTROENTEROLOGY">
+      <option id="op6335" value="UROLOGY">
+      <option id="op6335" value="SURGICAL GASTROENTEROLOGY">
+      <option id="op6335" value="NEUROLOGY">
+      <option id="op6335" value="URO SURGERY">
+      <option id="op6335" value="CARDIO THORACIC SURGERY">
+
+    </datalist>
+
+<div class="form-group">
+    <label for="inputlg" style="font: 24px Arial, Helvetica, sans-serif;">ICD Description</label>
+  <input class="form-control input-lg" name="input" style="padding: 20px 20px 20px 20px; font: 24px Arial, Helvetica, sans-serif;">
+</div>
+
+
+  <input class="btn btn-primary" type="submit" value="submit">
+
+
+</form>
+
+
+{% for post in posts %}
+    <h4> {{post.desc}} : {{post.code}} </h4>
+    <h5> Score : {{ post.score }} </h5>
+    <br>
+{% endfor %}
+
+
+{% endblock body_content %}
