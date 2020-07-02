@@ -44,3 +44,11 @@ Go to **[http://localhost:5000/](http://localhost:5000/)** to see the launched a
 
 
 
+
+## Meta
+
+For any additional info, please contact me
+M. Zahash – work.zahash@gmail.com
+
+Distributed under the GPL-3.0 license. See ``LICENSE`` for more information.
+
